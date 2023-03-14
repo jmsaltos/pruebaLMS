@@ -22,18 +22,31 @@
         canvas.style.position = "fixed";
 
         document.body.style.textAlign = "left";
+      }      
+      var name;
+      var mail;
+      function f1(value){
+        name = value;
       }
-
+      function f2(value){
+        mail = value;
+      }
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/Prueba.data.unityweb",
-        frameworkUrl: "Build/Prueba.framework.js.unityweb",
-        codeUrl: "Build/Prueba.wasm.unityweb",
+        dataUrl: "Build/Prueba.data.br",
+        frameworkUrl: "Build/Prueba.framework.js.br",
+        codeUrl: "Build/Prueba.wasm.br",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Mind Space",
         productVersion: "0.1.0",
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      }).then((unityInstance) => {
+      f1("Jarol");
+      f2("jarol_pm@hotmail.com");
+      unityInstance.SendMessage("Main Camera", "GetCurrentName", name);
+      unityInstance.SendMessage("Main Camera", "GetCurrentCorreo", mail);
+        
       });
     </script>
   </body>
