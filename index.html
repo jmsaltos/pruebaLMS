@@ -22,7 +22,7 @@
         canvas.style.position = "fixed";
 
         document.body.style.textAlign = "left";
-      }      
+      }
       var name;
       var mail;
       function f1(value){
@@ -31,10 +31,11 @@
       function f2(value){
         mail = value;
       }
+
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/Prueba.data.br",
-        frameworkUrl: "Build/Prueba.framework.js.br",
-        codeUrl: "Build/Prueba.wasm.br",
+        dataUrl: "Build/Prueba.data.unityweb",
+        frameworkUrl: "Build/Prueba.framework.js.unityweb",
+        codeUrl: "Build/Prueba.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Mind Space",
@@ -45,9 +46,9 @@
       f1("Jarol");
       f2("jarol_pm@hotmail.com");
       unityInstance.SendMessage("Main Camera", "GetCurrentName", name);
-      unityInstance.SendMessage("Main Camera", "GetCurrentCorreo", mail);
-        
+      unityInstance.SendMessage("Main Camera", "GetCurrentCorreo", mail);        
       });
     </script>
   </body>
 </html>
+
