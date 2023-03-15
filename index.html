@@ -27,6 +27,7 @@
       var mail;
       function f1(value){
         name = value;
+        alert(name);
       }
       function f2(value){
         mail = value;
@@ -48,10 +49,8 @@
           setTimeout(() => {
           unityInstance.SendMessage("Main Camera", "GetCurrentName", name);
           unityInstance.SendMessage("Main Camera", "GetCurrentCorreo", mail);     
-          }, 4000);   
-        }); 
-        f1("Jarol");
-        f2("js@a.com");     
+          }, 5000);   
+        });     
       //}
     </script>
   </body>
