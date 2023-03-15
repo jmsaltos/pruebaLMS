@@ -25,7 +25,6 @@
       }
       var name;
       var mail;
-      var myUnityInstance = null;
       function f1(value){
         name = value;
       }
@@ -46,13 +45,9 @@
         }).then((unityInstance) => {
           f1("Jarol");
           f2("js@a.com");
-          myUnityInstance = unityInstance;
-          //unityInstance.SendMessage("Main Camera", "GetCurrentName", name);
-          //unityInstance.SendMessage("Main Camera", "GetCurrentCorreo", mail);        
-        });
-      myUnityInstance.SendMessage("Main Camera", "GetCurrentName", name);
-      myUnityInstance.SendMessage("Main Camera", "GetCurrentCorreo", mail);   
-      
+          unityInstance.SendMessage("Main Camera", "GetCurrentName", name);
+          unityInstance.SendMessage("Main Camera", "GetCurrentCorreo", mail);        
+        });      
       //}
     </script>
   </body>
