@@ -45,8 +45,10 @@
         }).then((unityInstance) => {
           //f1("Jarol");
           //f2("js@a.com");
+          setTimeout(() => {
           unityInstance.SendMessage("Main Camera", "GetCurrentName", name);
-          unityInstance.SendMessage("Main Camera", "GetCurrentCorreo", mail);        
+          unityInstance.SendMessage("Main Camera", "GetCurrentCorreo", mail);     
+          }, 4000);   
         }); 
         f1("Jarol");
         f2("js@a.com");     
