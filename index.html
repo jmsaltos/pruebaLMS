@@ -25,13 +25,14 @@
       }
       var name;
       var mail;
+      var myUnityInstance = null;
       function f1(value){
         name = value;
       }
       function f2(value){
         mail = value;
       }
-      function startApp(){
+      //function startApp(){
         createUnityInstance(document.querySelector("#unity-canvas"), {
           dataUrl: "Build/Prueba.data.unityweb",
           frameworkUrl: "Build/Prueba.framework.js.unityweb",
@@ -43,12 +44,16 @@
           // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
           // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
         }).then((unityInstance) => {
-          //f1("name");
-          //f2("mail");
-          unityInstance.SendMessage("Main Camera", "GetCurrentName", name);
-          unityInstance.SendMessage("Main Camera", "GetCurrentCorreo", mail);        
+          f1("Jarol");
+          f2("js@a.com");
+          myUnityInstance = unityInstance;
+          //unityInstance.SendMessage("Main Camera", "GetCurrentName", name);
+          //unityInstance.SendMessage("Main Camera", "GetCurrentCorreo", mail);        
         });
-      }
+      miUnityInstance.SendMessage("Main Camera", "GetCurrentName", name);
+      myUnityInstance.SendMessage("Main Camera", "GetCurrentCorreo", mail);   
+      
+      //}
     </script>
   </body>
 </html>
